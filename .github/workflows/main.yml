@@ -24,5 +24,8 @@ jobs:
         env:
           ACCOUNT: ${{ secrets.ACCOUNT }}
           PASSWORD: ${{ secrets.PASSWORD }}
+          ACCOUNT_new: ${{secrets.ACCOUNT_new}}
+          PASSWORD_new: ${{secrets.PASSWORD_new}}
         run: |
           python3 clock-in.py ${ACCOUNT} ${PASSWORD}
+          python3 clock-in.py ${ACCOUNT_new} ${PASSWORD_new}
