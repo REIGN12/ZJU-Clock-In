@@ -22,16 +22,10 @@ jobs:
           sudo -E apt-get -yqq install python3
       - name: Clock In
         env:
-          ACCOUNT: ${{ secrets.ACCOUNT }}
-          PASSWORD: ${{ secrets.PASSWORD }}
           ACCOUNT_new: ${{secrets.ACCOUNT_new}}
           PASSWORD_new: ${{secrets.PASSWORD_new}}
           ACC_HELP0: ${{ secrets.ACC_HELP0 }}
           PASS_HELP0: ${{ secrets.PASS_HELP0 }}
-          ACC_HELP1: ${{ secrets.ACC_HELP1 }}
-          PASS_HELP1: ${{ secrets.PASS_HELP1 }}
         run: |
-          python3 clock-in.py ${ACCOUNT} ${PASSWORD}
           python3 clock-in.py ${ACCOUNT_new} ${PASSWORD_new}
           python3 clock-in.py ${ACC_HELP0} ${PASS_HELP0}
-          python3 clock-in.py ${ACC_HELP1} ${PASS_HELP1}
